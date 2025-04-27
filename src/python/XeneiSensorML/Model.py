@@ -1,6 +1,6 @@
-from src.python.MotorLayer import MotorLayer
-from src.python.SensorLayer import SensorLayer
-from src.python.SensorNeuron import SensorNeuron
+from MotorLayer import MotorLayer
+from SensorLayer import SensorLayer
+from SensorNeuron import SensorNeuron
 
 
 class Model:

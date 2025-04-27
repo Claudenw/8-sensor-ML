@@ -1,6 +1,6 @@
 import random
 
-from src.python.SensorNeuron import DONT_CARE, SensorNeuron
+from SensorNeuron import DONT_CARE, SensorNeuron
 
 
 class SensorLayer:

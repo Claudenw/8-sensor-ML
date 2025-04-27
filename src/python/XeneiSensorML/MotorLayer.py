@@ -1,6 +1,6 @@
 from random import randint
 
-from src.python.SensorNeuron import DONT_CARE
+from SensorNeuron import DONT_CARE
 
 
 class MotorLayer:

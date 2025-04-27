@@ -1,0 +1,15 @@
+[project]
+name = "XeneiSensorML"
+version = "0.0.1"
+authors = [
+    { name = "Claude Warren", email = "claude@xenie.org" },
+]
+description = "A sensor based ML package to control motors."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "Apache2"
+license-files = ["LICENSE"]
