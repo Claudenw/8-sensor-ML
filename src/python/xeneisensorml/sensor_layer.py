@@ -1,6 +1,6 @@
 import random
 
-from sensor_neuron import DONT_CARE, SensorNeuron
+from xeneisensorml.sensor_neuron import DONT_CARE, SensorNeuron
 
 
 class SensorLayer:

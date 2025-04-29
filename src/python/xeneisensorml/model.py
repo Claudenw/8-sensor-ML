@@ -1,6 +1,6 @@
-from motor_layer import MotorLayer
-from sensor_layer import SensorLayer
-from sensor_neuron import SensorNeuron
+import xeneisensorml
+import xeneisensorml.sensor_layer
+import xeneisensorml.motor_layer
 
 
 class Model:
