@@ -1,4 +1,4 @@
-from model_layer import MotorLayer
+from motor_layer import MotorLayer
 from sensor_layer import SensorLayer
 from sensor_neuron import SensorNeuron
 
