@@ -1,7 +1,7 @@
 from time import sleep
 from gpiozero import Motor
-from XeneiBumper.sensor import Sensor
-from XeneiSensorML.model import Model
+from xeneibumper.sensor import Sensor
+from xeneisensorml.model import Model
 
 motor_pins = [[19, 13], [12, 18]]
 motor = [Motor(motor_pins[0]), Motor(motor_pins[1])]
