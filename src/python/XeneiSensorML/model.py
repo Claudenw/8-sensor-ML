@@ -1,19 +1,14 @@
-from MotorLayer import MotorLayer
-from SensorLayer import SensorLayer
-from SensorNeuron import SensorNeuron
+from model_layer import MotorLayer
+from sensor_layer import SensorLayer
+from sensor_neuron import SensorNeuron
 
 
 class Model:
-    MOTOR_STATE = ["off", "fwd", "rev", "unknown"]
+    MOTOR_STATE = ["off", "fwd", "rev", "brake"]
 
     def __init__(self):
-        self.sensors = []
-        sensor_layer = SensorLayer()
-        for i in range(8):
-            sensor = Sensor();
-            self.sensors.append(sensor)
-            sensor_layer.add_neuron(SensorNeuron(sensor.get_state))
-        self.motor_layer = MotorLayer(sensor_layer)
+        self.sensor_layer = SensorLayer()
+        self.motor_layer = MotorLayer(self.sensor_layer)
 
     def print_neurons(self):
         line = "Neurons: "
@@ -26,14 +21,15 @@ class Model:
         print("Left motor: " + self.MOTOR_STATE[motor_states[0]])
         print("Right motor: " + self.MOTOR_STATE[motor_states[0]])
         self.print_neurons()
+        return motor_states
 
     def feedback(self):
         self.motor_layer.feedback()
         print("Feedback")
         self.print_neurons()
 
-    def set_sensor(self, idx, value):
-        self.sensors[idx].set_state(value)
+    def add_sensor(self, state_func):
+        self.sensor_layer.add_neuron(SensorNeuron(state_func))
 
     def write_model(self, file_name):
         with open(file_name, 'w', encoding="utf-8") as f:
@@ -48,29 +44,3 @@ class Model:
             while bitmap != '':
                 self.motor_layer.get_sensor_layer().reset_neuron(idx, bitmap)
                 idx += 1
-
-
-class Sensor:
-    def __init__(self):
-        self.state = False
-
-    def set_state(self, state):
-        self.state = state;
-
-    def get_state(self):
-        return self.state
-
-
-def main():
-    model = Model()
-    model.set_sensor(0, True)
-    model.set_sensor(5, True)
-    for i in range(0, 10):
-        model.trigger()
-        model.feedback()
-
-
-# Using the special variable
-# __name__
-if __name__ == "__main__":
-    main()
