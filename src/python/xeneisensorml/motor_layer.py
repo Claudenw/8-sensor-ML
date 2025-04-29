@@ -1,6 +1,6 @@
 from random import randint
 
-from sensor_neuron import DONT_CARE
+from xeneisensorml.sensor_neuron import DONT_CARE
 
 
 class MotorLayer:

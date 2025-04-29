@@ -4,7 +4,7 @@ from xeneibumper.sensor import Sensor
 from xeneisensorml.model import Model
 
 motor_pins = [[19, 13], [12, 18]]
-motor = [Motor(motor_pins[0]), Motor(motor_pins[1])]
+motor = [Motor(19, 13), Motor(12, 18)]
 
 sensor_pins = [23, 24, 25, 8, 7, 1, 9, 11]
 model = Model()
@@ -23,9 +23,9 @@ try:
             if motor_state[i] == 0:
                 motor[i].stop()
             elif motor_state[i] == 1:
-                motor[i].forward(speed=3)
+                motor[i].forward(speed=0.3)
             elif motor_state[i] == 2:
-                motor[i].backward(speed=3)
+                motor[i].backward(speed=0.3)
             else:
                 motor[i].stop()
         sleep(0.5)
