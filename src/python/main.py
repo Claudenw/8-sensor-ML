@@ -20,6 +20,7 @@ try:
         model.feedback()
         motor_state = model.trigger()
         for i in [0, 1]:
+            print("motor state " + str(i) + ": " + str(motor_state[i]))
             if motor_state[i] == 0:
                 motor[i].stop()
             elif motor_state[i] == 1:
@@ -27,7 +28,7 @@ try:
             elif motor_state[i] == 2:
                 motor[i].backward(speed=0.3)
             else:
-                motor[i].stop()
+                print("Do nothing")
         sleep(0.5)
 
 except KeyboardInterrupt:
