@@ -26,8 +26,8 @@ class SensorLayer:
                     result.reset(i)
         candidates = result.nonzero()
         if candidates == self.last_result.nonzero():
-            return self.last_answer;
-
+            return self.last_answer
+        print("PICKING A NEW STATE")
         idx = random.randrange(0, len(candidates))
         self.last_answer = candidates[idx]
         return self.last_answer

@@ -14,7 +14,7 @@ class MotorLayer:
         left_result = mapped_result & 0xC >> 2  # high 2 bits
         right_result = mapped_result & 0x3  # low 2 bits
         self.last_selection = (left_result << 2) | right_result
-
+        print("Motor layer trigger result: " + hex(self.last_selection))
         return [left_result, right_result]
 
     def select(self, result):

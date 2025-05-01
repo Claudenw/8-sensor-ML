@@ -5,7 +5,6 @@ from xeneisensorml.motor_layer import MotorLayer
 
 
 class Model:
-    MOTOR_STATE = ["off", "fwd", "rev", "brake"]
 
     def __init__(self):
         self.sensor_layer = SensorLayer()
@@ -19,8 +18,6 @@ class Model:
 
     def trigger(self):
         motor_states = self.motor_layer.trigger()
-        print("Left motor: " + self.MOTOR_STATE[motor_states[0]])
-        print("Right motor: " + self.MOTOR_STATE[motor_states[0]])
         self.print_neurons()
         return motor_states
 
