@@ -16,6 +16,8 @@ for pin_num in sensor_pins:
 
 try:
     while True:
+        for sensor in sensors:
+            print("Sensor " + str(sensor.get_state()))
         # Read the state of the switch
         model.feedback()
         motor_state = model.trigger()
