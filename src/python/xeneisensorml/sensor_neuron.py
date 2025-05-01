@@ -23,6 +23,7 @@ class SensorNeuron:
     def trigger(self):
         self.last_state = self.state_func()
         if self.last_state:
+            print("Neuron fired")
             return self.options
         return DONT_CARE
 
