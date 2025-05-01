@@ -28,7 +28,10 @@ class SensorNeuron:
 
     def feedback(self, last_selection):
         if self.last_state and self.state_func():
+            print("Updating neuron")
             self.options.reset(last_selection)
+        else:
+            print("No neuron update")
 
     def get_model(self):
         return self.options
