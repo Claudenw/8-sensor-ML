@@ -23,9 +23,9 @@ try:
             if motor_state[i] == 0:
                 motor[i].stop()
             elif motor_state[i] == 1:
-                motor[i].forward(speed=3)
+                motor[i].forward(speed=0.3)
             elif motor_state[i] == 2:
-                motor[i].backward(speed=3)
+                motor[i].backward(speed=0.3)
             else:
                 motor[i].stop()
         sleep(0.5)

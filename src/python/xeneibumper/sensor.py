@@ -6,8 +6,7 @@ class Sensor:
 
     def __init__(self, pin):
         self.pin = pin
-        self.button = Button(pin)
-        self.button.pull_up = False
+        self.button = Button(pin, pull_up=False)
 
     def get_state(self):
         return self.button.value
