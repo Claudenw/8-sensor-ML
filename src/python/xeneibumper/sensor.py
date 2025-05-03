@@ -9,7 +9,7 @@ class Sensor:
         self.button = Button(pin, pull_up=False)
 
     def get_state(self):
-        return self.button.value
+        return not self.button.value
 
 
 def main():
