@@ -29,6 +29,7 @@ try:
 
         # update the motors.
         for i in [0, 1]:
+            print("motor " + str(i) + ' state ' + str(next_state[i]))
             if next_state[i] == 0:
                 motor[i].stop()
             elif next_state[i] == 1:
